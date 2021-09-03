@@ -1,0 +1,61 @@
+<?php
+
+namespace Soho\Roots\Console;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
+
+class InstallRootsCommand extends Command
+{
+    protected $signature = 'roots:install';
+
+    protected $description = 'Install R00ts';
+
+    public function handle()
+    {
+        $this->info('Installing Roots...');
+
+        $this->info('Publishing configuration...');
+
+        if (! $this->configExists('roots.php')) {
+            $this->publishConfiguration();
+            $this->info('Published configuration');
+        } else {
+            if ($this->shouldOverwriteConfig()) {
+                $this->info('Overwriting configuration file...');
+                $this->publishConfiguration($force = true);
+            } else {
+                $this->info('Existing configuration was not overwritten');
+            }
+        }
+
+        $this->info('Installed Roots');
+    }
+
+    private function configExists($fileName)
+    {
+        return File::exists(config_path($fileName));
+    }
+
+    private function shouldOverwriteConfig()
+    {
+        return $this->confirm(
+            'Config file already exists. Do you want to overwrite it?',
+            false
+        );
+    }
+
+    private function publishConfiguration($forcePublish = false)
+    {
+        $params = [
+            '--provider' => "Soho\Roots\RootsServiceProvider",
+            '--tag' => "config"
+        ];
+
+        if ($forcePublish === true) {
+            $params['--force'] = true;
+        }
+
+       $this->call('vendor:publish', $params);
+    }
+}

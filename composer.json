@@ -1,39 +1,37 @@
 {
-    "name": "archtechx/replace",
+    "name": "soho/roots",
     "description": "",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Samuel Štancl",
-            "email": "samuel@archte.ch"
+            "name": "Alberto Jaramillo",
+            "email": "alberto@soho.cl"
         }
     ],
     "autoload": {
         "psr-4": {
-            "ArchTech\\REPLACE\\": "src/"
+            "Soho\\Roots\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ArchTech\\REPLACE\\Tests\\": "tests/"
+            "Soho\\Roots\\Tests\\": "tests"
         }
     },
     "require": {
         "php": "^8.0",
         "illuminate/support": "^8.24"
     },
-    "require-dev": {
-        "orchestra/testbench": "^6.9",
-        "nunomaduro/larastan": "^0.6.10",
-        "pestphp/pest": "^1.2",
-        "pestphp/pest-plugin-laravel": "^1.0"
-    },
     "extra": {
         "laravel": {
             "providers": [
-                "ArchTech\\REPLACE\\PackageServiceProvider"
+                "Soho\\Roots\\RootsServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "orchestra/testbench": "^6.0"
     }
 }

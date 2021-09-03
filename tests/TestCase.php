@@ -1,16 +1,26 @@
 <?php
 
-namespace ArchTech\REPLACE\Tests;
+namespace Soho\Roots\Tests;
 
-use Orchestra\Testbench\TestCase as TestbenchTestCase;
-use ArchTech\REPLACE\REPLACEServiceProvider;
+use Soho\Roots\RootsServiceProvider;
 
-class TestCase extends TestbenchTestCase
+class TestCase extends \Orchestra\Testbench\TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return [
-            REPLACEServiceProvider::class,
-        ];
-    }
+  public function setUp(): void
+  {
+    parent::setUp();
+    // additional setup
+  }
+
+  protected function getPackageProviders($app)
+  {
+    return [
+      RootsServiceProvider::class,
+    ];
+  }
+
+  protected function getEnvironmentSetUp($app)
+  {
+    // perform environment setup
+  }
 }

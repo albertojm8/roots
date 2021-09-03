@@ -1,0 +1,14 @@
+// 'stubs/foo.php.stub'
+<?php
+
+namespace Soho\Roots;
+
+use Soho\Roots\Foo;
+
+class DummyClass implements Foo
+{
+    public function myFoo()
+    {
+        // foo
+    }
+}

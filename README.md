@@ -1,12 +1,12 @@
-# REPLACE
+# Roots
 
 Simple and flexible package template.
 
 # Usage
 
-- Replace all occurances of `REPLACE` (case sensitive) with the name of the package namespace. E.g. the `Foo` in `ArchTech\Foo`.
-    - Also do this for file names, e.g. `REPLACEServiceProvider.php`.
-- Replace all occurances of `replace` with the name of the package on composer, e.g. the `bar` in `archtechx/bar`.
+- Roots all occurances of `Roots` (case sensitive) with the name of the package namespace. E.g. the `Foo` in `Soho\Foo`.
+    - Also do this for file names, e.g. `RootsServiceProvider.php`.
+- Roots all occurances of `Roots` with the name of the package on composer, e.g. the `bar` in `Sohox/bar`.
 - If MySQL is not needed, remove `docker-compose.yml`, remove the line that runs docker from `./check`, and remove it from the `.github/ci.yml` file.
     - If SQLite is wanted, change `DB_CONNECTION` in `phpunit.xml` to `sqlite`, and `DB_DATABASE` to `:memory:`.
 
@@ -15,7 +15,7 @@ Simple and flexible package template.
 ## Installation
 
 ```sh
-composer require archtechx/replace
+composer require soho/roots
 ```
 
 ## Usage
