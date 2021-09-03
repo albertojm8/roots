@@ -4,7 +4,7 @@ namespace Soho\Roots\Console;
 
 use Illuminate\Console\GeneratorCommand;
 
-class ScaffoldApiCommand extends GeneratorCommand
+class ScaffoldApiCommand extends Command
 {
     protected $name = 'roots:api';
 
@@ -19,7 +19,7 @@ class ScaffoldApiCommand extends GeneratorCommand
 
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace . '\Api';
+        return $rootNamespace . '\roots';
     }
 
     public function handle()
