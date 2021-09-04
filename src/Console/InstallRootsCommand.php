@@ -9,7 +9,7 @@ class InstallRootsCommand extends Command
 {
     protected $signature = 'roots:install';
 
-    protected $description = 'Install R00ts';
+    protected $description = 'Install Roots';
 
     public function handle()
     {
